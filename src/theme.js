@@ -8,7 +8,7 @@ const variables = {
   paleWhite: "#FFFDF7",
   white: "#000000",
   viewportFullHeight: `calc(100vh - 8em)`,
-  bgColor: 'rgba(255, 253, 247, 1)',
+  bgColor: 'rgba(255, 255, 255)',
 };
 
 let baseTheme = createMuiTheme({

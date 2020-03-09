@@ -11,7 +11,7 @@ console.log(isLoggedIn);
         render={props => (
           <Redirect
             to={{
-              pathname: "/collection",
+              pathname: "/dashboard",
               state: { from: props.location }
             }}
           />

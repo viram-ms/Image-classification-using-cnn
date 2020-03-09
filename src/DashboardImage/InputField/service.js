@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 
 export const UploadPhotoCall = () => {
-    const [info, setInfo] = useState(false);
+    const [info, setInfo] = useState();
     async function fetchCall(url,body){
         console.log(body);
         try {
@@ -9,10 +9,9 @@ export const UploadPhotoCall = () => {
                 url, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'multipart/form-data',
-                        'Authorization': `Token ${localStorage.getItem('token')}`
+                        'Content-Type': 'application/json',
                     },
-                    body: body
+                    body: JSON.stringify(body)
                 }
             )
             console.log(res);
@@ -22,11 +21,7 @@ export const UploadPhotoCall = () => {
             const data = await res.json();
             console.log(data);
             if (res.status === 200){
-                // console.log(data.data);
-                // localStorage.setItem('token',data.token);
-                // localStorage.setItem('data',data.data[0].UserId);
-                // window.location.reload();
-                // setInfo(data.data);
+                setInfo(data);
             }
         } catch(e){
             console.log(e);

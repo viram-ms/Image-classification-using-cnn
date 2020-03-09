@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignInSide(props) {
   const classes = useStyles();
-  const [values, setValues] = useState({ Name: '', EmailId: '', Password: '', PhoneNo: '', AddharNo: ''})
+  const [values, setValues] = useState({username:'', email: '', password: ''})
   const {fetchCall} = UseSignUp(props);
   
   const handleChange = (event) => {
@@ -53,7 +53,7 @@ export default function SignInSide(props) {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchCall('http://localhost:4000/api/auth/register', JSON.stringify(values));
+    fetchCall('http://19da2ea5.ngrok.io/auth/users/', JSON.stringify(values));
   }
   console.log(props);
 
@@ -82,8 +82,8 @@ export default function SignInSide(props) {
               required
               fullWidth
               id="name"
-              label="Full Name"
-              name="Name"
+              label="User Name"
+              name="username"
               autoFocus
             />
             <TextField
@@ -95,9 +95,9 @@ export default function SignInSide(props) {
               fullWidth
               id="email"
               label="Email Address"
-              name="EmailId"
+              name="email"
               autoComplete="email"
-              autoFocus
+              
             />
             <TextField
               value={values.Password}
@@ -106,13 +106,13 @@ export default function SignInSide(props) {
               margin="normal"
               required
               fullWidth
-              name="Password"
+              name="password"
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
             />
-             <TextField
+             {/* <TextField
               value={values.PhoneNo}
               onChange={handleChange}
               variant="outlined"
@@ -123,8 +123,8 @@ export default function SignInSide(props) {
               label="Phone Number"
               name="PhoneNo"
               autoFocus
-            /> 
-            <TextField
+            />  */}
+            {/* <TextField
             value={values.AddharNo}
             onChange={handleChange}
             variant="outlined"
@@ -135,7 +135,7 @@ export default function SignInSide(props) {
             label="Adhar Card Number"
             name="AddharNo"
             autoFocus
-          />
+          /> */}
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"

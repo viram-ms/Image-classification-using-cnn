@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignInSide() {
   const classes = useStyles();
-  const [values, setValues] = useState({ EmailId: '', Password: ''})
+  const [values, setValues] = useState({ username: '', password: ''})
 
   const { fetchCall } = UseLogin();
 
@@ -54,7 +54,7 @@ export default function SignInSide() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchCall('http://localhost:4000/api/auth/login', JSON.stringify(values));
+    fetchCall('http://19da2ea5.ngrok.io/auth/token/login', JSON.stringify(values));
   }
 
   return (
@@ -82,8 +82,8 @@ export default function SignInSide() {
               required
               fullWidth
               id="email"
-              label="Email Address"
-              name="EmailId"
+              label="User Name"
+              name="username"
               autoComplete="email"
               autoFocus
             />
@@ -94,7 +94,7 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
-              name="Password"
+              name="password"
               label="Password"
               type="password"
               id="password"

@@ -46,15 +46,13 @@ export default function MenuAppBar(props) {
       <AppBar position="sticky">
         <Toolbar>
             <div className={classes.title}>
-            <IconButton  className={classes.menuButton} color="inherit" aria-label="menu">
-            <DirectionCars />
-          </IconButton>
-          <Typography variant="h6" style={{color:'white', textDecoration: 'none', marginTop: 10}} component={Link} to={"/"}>
-            Car Renting
+           
+          <Typography variant="h4" style={{color:'white', textDecoration: 'none', marginTop: 10, fontFamily: 'Pacifico, cursive'}} component={Link} to={"/"}>
+            Image Classification
           </Typography>
             </div>
           
-          {!isLoggedIn &&  <div>
+          {/* {!isLoggedIn &&  <div>
               <StyledLoadingButton
                 color="secondary"
                 variant="contained"
@@ -64,7 +62,7 @@ export default function MenuAppBar(props) {
               >
                 LOGIN
               </StyledLoadingButton>
-            </div>}
+            </div>} */}
             
           {isLoggedIn && <Avatar handleMenu = {handleMenu}  open={open}  handleClose={handleClose} anchorEl={anchorEl} handleLogout={handleLogout}/> }
         </Toolbar>

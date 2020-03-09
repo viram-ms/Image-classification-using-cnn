@@ -16,7 +16,7 @@ export const UseSignUp = (props) => {
             if(res.status === 500){
                 console.log('error');
             }
-            if (res.status === 200){
+            if (res.status === 201){
                 history.push('./login');
             }
         } catch(e){
