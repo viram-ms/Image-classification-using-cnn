@@ -14,7 +14,7 @@ export const UploadPhotoCall = () => {
             )
             console.log(res);
             if(res.status === 500){
-                console.log('error');
+                console.log('error done');
             }
             const data = await res.json();
             console.log(data);
