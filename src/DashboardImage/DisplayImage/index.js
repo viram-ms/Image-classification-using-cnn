@@ -49,7 +49,6 @@ function DisplayImage() {
     const [values, setValues] = useState(['forest','glacier','buildings','street','sea','forest','glacier','buildings','street','glacier']);
     const [num, setNum] = useState(0);
     
-    const pause = ms => new Promise(res => setTimeout(res,ms));
 
     const submitValue =  async (e) => {
         e.preventDefault();
